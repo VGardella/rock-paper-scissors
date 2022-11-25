@@ -26,3 +26,13 @@ function playRound(computerChoice, playerChoice) {
     }
 }
 
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        const computerChoice = getComputerChoice();
+        const playerChoice = playerSelection();
+        console.log(playRound(computerChoice, playerChoice));
+    }
+}
+
+game()

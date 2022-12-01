@@ -7,18 +7,9 @@ function getComputerChoice() {
 function playRound(computerChoice, playerChoice) {
     
     //results
-    const container = document.querySelector('body')
+    const results = document.getElementById('results');
+    results.style.cssText = 'border: 2px solid black; height: 100px; width: 200px; margin: 30px';
 
-    if (document.getElementById('results')) {
-        container.removeChild(results)
-    };
-
-    if (!document.getElementById('results')) {
-        const results = document.createElement('div')
-        results.setAttribute('id', 'results')
-        results.style.cssText = 'border: 2px solid black; height: 100px; width: 200px; margin: 30px';
-        container.appendChild(results);
-    };
     
     if (computerChoice === playerChoice) {
         results.textContent = `You and the computer choose ${computerChoice}; Is\'s a tie!`;

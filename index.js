@@ -4,35 +4,48 @@ function getComputerChoice() {
     return choices[index];
 }
 
-function playerSelection() {
-    let selection = prompt('Choose rock, paper or scissors:');
-    selection = selection.charAt(0).toUpperCase() + selection.slice(1);
-    return selection
-}
-
 function playRound(computerChoice, playerChoice) {
-    if (playerChoice === '') {
-        console.log(`You have to choose an option!`);
-    } else if (playerChoice !== 'Rock' && playerChoice !== 'Paper' && playerChoice !== 'Scissors') {
-        console.log(`Chose one of the accepted options!`);
-    } else if (computerChoice === playerChoice) {
-        console.log(`You and the computer choose ${computerChoice}; Is\'s a tie!`);
-    } else if (computerChoice === 'Rock' && playerChoice === 'Scissors' ||
+    
+    //results
+    const container = document.querySelector('body')
+
+    if (document.getElementById('results')) {
+        container.removeChild(results)
+    };
+
+    if (!document.getElementById('results')) {
+        const results = document.createElement('div')
+        results.setAttribute('id', 'results')
+        results.style.cssText = 'border: 2px solid black; height: 100px; width: 200px; margin: 30px';
+        container.appendChild(results);
+    };
+    
+    if (computerChoice === playerChoice) {
+        results.textContent = `You and the computer choose ${computerChoice}; Is\'s a tie!`;
+    } 
+    else if (computerChoice === 'Rock' && playerChoice === 'Scissors' ||
     computerChoice === 'Paper' && playerChoice === 'Rock' ||
-    computerChoice === 'Rock' && playerChoice === 'Scissors') {
-        console.log(`Computer\'s choice: ${computerChoice} \n Your choice: ${playerChoice}; You lost!`);
-    } else {
-        console.log(`Computer\'s choice: ${computerChoice} \n Your choice: ${playerChoice}; You won!`);
+    computerChoice === 'Scissors' && playerChoice === 'Paper') {
+        results.textContent = `Computer\'s choice: ${computerChoice} \n Your choice: ${playerChoice}; You lost!`;
+    } 
+    else {
+        results.textContent = `Computer\'s choice: ${computerChoice} \n Your choice: ${playerChoice}; You won!`;
     }
 }
 
 
 function game() {
-    for (let i = 0; i < 5; i++) {
-        const computerChoice = getComputerChoice();
-        const playerChoice = playerSelection();
-        console.log(playRound(computerChoice, playerChoice));
-    }
+    let computerChoice = getComputerChoice();
+
+    //buttons and listeners
+    const rock = document.querySelector('#rock');
+    rock.addEventListener('click', () => {playRound(getComputerChoice(), 'Rock');});
+
+    const paper = document.querySelector('#paper');
+    paper.addEventListener('click', () => {playRound(getComputerChoice(), 'Paper');});
+
+    const scissors = document.querySelector('#scissors');
+    scissors.addEventListener('click', () => {playRound(getComputerChoice(), 'Scissors');});
 }
 
 game()

@@ -14,11 +14,11 @@ function playRound(computerChoice, playerChoice) {
   else if (computerChoice === 'Rock' && playerChoice === 'Scissors' ||
   computerChoice === 'Paper' && playerChoice === 'Rock' ||
   computerChoice === 'Scissors' && playerChoice === 'Paper') {
-      roundInfo.textContent = `Computer\'s choice: ${computerChoice}` + `\n` + `Your choice: ${playerChoice}; You lost!`;
+      roundInfo.textContent = `Computer\'s choice: ${computerChoice}. Your choice: ${playerChoice}; You lost!`;
       return winner = 'computer';
   } 
   else {
-      roundInfo.textContent = `Computer\'s choice: ${computerChoice} \n Your choice: ${playerChoice}; You won!`;
+      roundInfo.textContent = `Computer\'s choice: ${computerChoice}. Your choice: ${playerChoice}; You won!`;
       return winner = 'player';
   }
 }
@@ -50,17 +50,19 @@ buttons.forEach((button) => {
     if (winner === 'computer') {
       computerWins += 1;
     }
+    counter.textContent = `Player: ${playerWins} / Computer: ${computerWins}`;
     if (playerWins === 5) {
-      results.textContent = 'Player Wins!';
+      roundInfo.textContent = 'Player Wins!';
       playerWins = 0;
       computerWins = 0;
+      counter.textContent = '';
     }
     else if (computerWins === 5) {
-      results.textContent = 'Computer Wins!';
+      roundInfo.textContent = 'Computer Wins!';
       playerWins = 0;
       computerWins = 0;
+      counter.textContent = '';
     }
-    counter.textContent = `Player: ${playerWins} / Computer: ${computerWins}`
   });
   });
 

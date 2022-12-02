@@ -41,28 +41,35 @@ const counter = document.getElementById('counter')
 
 buttons.forEach((button) => {
   button.addEventListener("click", function() {
+
     let computerChoice = getComputerChoice();
     let playerChoice = this.id.charAt(0).toUpperCase() + this.id.slice(1).toLowerCase();
     playRound(computerChoice, playerChoice);
+
     if (winner === 'player') {
       playerWins += 1;
     }
+
     if (winner === 'computer') {
       computerWins += 1;
     }
+
     counter.textContent = `Player: ${playerWins} / Computer: ${computerWins}`;
+
     if (playerWins === 5) {
       roundInfo.textContent = 'Player Wins!';
       playerWins = 0;
       computerWins = 0;
       counter.textContent = '';
     }
+
     else if (computerWins === 5) {
       roundInfo.textContent = 'Computer Wins!';
       playerWins = 0;
       computerWins = 0;
       counter.textContent = '';
     }
+    
   });
   });
 

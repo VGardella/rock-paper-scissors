@@ -7,21 +7,18 @@ function getComputerChoice() {
 
 function playRound(computerChoice, playerChoice) {
   //results
-  const results = document.getElementById('results');
-  results.style.cssText = 'border: 2px solid black; height: 100px; width: 200px; margin: 30px';
-
   if (computerChoice === playerChoice) {
-      results.textContent = `You and the computer choose ${computerChoice}; Is\'s a tie!`;
+      roundInfo.textContent = `You and the computer choose ${computerChoice}; Is\'s a tie!`;
       return winner = 0;
   } 
   else if (computerChoice === 'Rock' && playerChoice === 'Scissors' ||
   computerChoice === 'Paper' && playerChoice === 'Rock' ||
   computerChoice === 'Scissors' && playerChoice === 'Paper') {
-      results.textContent = `Computer\'s choice: ${computerChoice} \n Your choice: ${playerChoice}; You lost!`;
+      roundInfo.textContent = `Computer\'s choice: ${computerChoice}` + `\n` + `Your choice: ${playerChoice}; You lost!`;
       return winner = 'computer';
   } 
   else {
-      results.textContent = `Computer\'s choice: ${computerChoice} \n Your choice: ${playerChoice}; You won!`;
+      roundInfo.textContent = `Computer\'s choice: ${computerChoice} \n Your choice: ${playerChoice}; You won!`;
       return winner = 'player';
   }
 }
@@ -35,6 +32,12 @@ let playerWins = 0;
 let computerWins = 0;
 
 const buttons = document.querySelectorAll("button");
+const results = document.getElementById('results');
+results.style.cssText = 'border: 2px solid black; height: 100px; width: 300px; margin: 30px';
+
+const roundInfo = document.getElementById('round-info');
+const counter = document.getElementById('counter')
+
 
 buttons.forEach((button) => {
   button.addEventListener("click", function() {
@@ -57,9 +60,7 @@ buttons.forEach((button) => {
       playerWins = 0;
       computerWins = 0;
     }
-    console.log(playerWins);
-    console.log(computerWins);
-    console.log(winner)
+    counter.textContent = `Player: ${playerWins} / Computer: ${computerWins}`
   });
   });
 

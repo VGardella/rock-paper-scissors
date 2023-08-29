@@ -71,42 +71,40 @@ function displayResult(computerChoice, playerChoice, winner) {
   }
 }
 
+function Game() {
+  // round
+  let computerChoice = getComputerChoice();
+  let playerChoice = this.id;
+  playRound(computerChoice, playerChoice);
+
+  if (winner === 'player') {
+    playerWins += 1;
+  } else if (winner === 'computer') {
+    computerWins += 1;
+  }
+
+  counter.textContent = `Player: ${playerWins} / Computer: ${computerWins}`;
+
+  // win
+  if (playerWins === 5) {
+    roundInfo.textContent = 'Player Wins!';
+    playerWins = 0;
+    computerWins = 0;
+    counter.textContent = '';
+  } else if (computerWins === 5) {
+    roundInfo.textContent = 'Computer Wins!';
+    playerWins = 0;
+    computerWins = 0;
+    counter.textContent = '';
+  }
+
+  // display
+  displayResult(computerChoice, playerChoice, winner);
+}
 
 // event listeners:
  
 buttons.forEach((button) => {
-  button.addEventListener("click", function() {
-
-    let computerChoice = getComputerChoice();
-    let playerChoice = this.id;
-    playRound(computerChoice, playerChoice);
-
-    if (winner === 'player') {
-      playerWins += 1;
-    }
-
-    if (winner === 'computer') {
-      computerWins += 1;
-    }
-
-    counter.textContent = `Player: ${playerWins} / Computer: ${computerWins}`;
-
-    if (playerWins === 5) {
-      roundInfo.textContent = 'Player Wins!';
-      playerWins = 0;
-      computerWins = 0;
-      counter.textContent = '';
-    }
-
-    else if (computerWins === 5) {
-      roundInfo.textContent = 'Computer Wins!';
-      playerWins = 0;
-      computerWins = 0;
-      counter.textContent = '';
-    }
-
-    displayResult(computerChoice, playerChoice, winner);
-  
-  });
-});
+  button.addEventListener("click", Game)
+})
 

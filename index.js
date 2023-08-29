@@ -1,4 +1,20 @@
+// varialbles
+
+let playerChoice = 0;
+let winner = 0;
+let playerWins = 0;
+let computerWins = 0;
+
+const buttons = document.querySelectorAll("button");
+const results = document.getElementById('results');
+
+const roundInfo = document.getElementById('round-info');
+const counter = document.getElementById('counter')
+
+results.style.cssText = 'border: 2px solid black; height: 100px; width: 300px; margin: 30px';
+
 // functions
+
 function getComputerChoice() {
   const choices = ['Rock', 'Paper', 'Scissors'];
   let index = Math.floor(Math.random() * choices.length);
@@ -22,23 +38,6 @@ function playRound(computerChoice, playerChoice) {
       return winner = 'player';
   }
 }
-
-
-// game
-
-let playerChoice = 0;
-let winner = 0;
-let playerWins = 0;
-let computerWins = 0;
-
-const buttons = document.querySelectorAll("button");
-const results = document.getElementById('results');
-results.style.cssText = 'border: 2px solid black; height: 100px; width: 300px; margin: 30px';
-
-const roundInfo = document.getElementById('round-info');
-const counter = document.getElementById('counter')
-
-
 buttons.forEach((button) => {
   button.addEventListener("click", function() {
 

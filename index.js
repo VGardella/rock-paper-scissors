@@ -88,18 +88,20 @@ function Game() {
   // win
   if (playerWins === 5) {
     roundInfo.textContent = 'Player Wins!';
-    playerWins = 0;
-    computerWins = 0;
-    counter.textContent = '';
+    restartGame();
   } else if (computerWins === 5) {
     roundInfo.textContent = 'Computer Wins!';
-    playerWins = 0;
-    computerWins = 0;
-    counter.textContent = '';
+    restartGame();
   }
 
   // display
   displayResult(computerChoice, playerChoice, winner);
+}
+
+function restartGame() {
+  playerWins = 0;
+  computerWins = 0;
+  counter.textContent = '';
 }
 
 // event listeners:

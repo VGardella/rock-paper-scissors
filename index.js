@@ -61,6 +61,16 @@ function playRound(computerChoice, playerChoice) {
   }
 }
 
+function displayResult(computerChoice, playerChoice, winner) {
+  if (winner === 0) {
+    roundInfo.textContent = `You and the computer choose ${computerChoice}; Is\'s a tie!`;
+  } else if (winner === 'player') {
+    roundInfo.textContent = `Computer\'s choice: ${computerChoice}. Your choice: ${playerChoice}; You won!`;
+  } else if (winner === 'computer') {
+    roundInfo.textContent = `Computer\'s choice: ${computerChoice}. Your choice: ${playerChoice}; You lost!`;
+  }
+}
+
 
 // event listeners:
  
@@ -95,6 +105,8 @@ buttons.forEach((button) => {
       counter.textContent = '';
     }
 
+    displayResult(computerChoice, playerChoice, winner);
+  
   });
 });
 

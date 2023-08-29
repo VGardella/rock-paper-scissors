@@ -15,61 +15,46 @@ const counter = document.getElementById('counter')
 // functions
 
 function getComputerChoice() {
-  const choices = ['Rock', 'Paper', 'Scissors'];
+  const choices = ['rock', 'paper', 'scissors'];
   let index = Math.floor(Math.random() * choices.length);
   return choices[index];
 }
 
 function playRound(computerChoice, playerChoice) {
   //results
-  // if (computerChoice === playerChoice) {
-  //     roundInfo.textContent = `You and the computer choose ${computerChoice}; Is\'s a tie!`;
-  //     winner = 0;
-  // } 
-  // else if (computerChoice === 'Rock' && playerChoice === 'Scissors' ||
-  // computerChoice === 'Paper' && playerChoice === 'Rock' ||
-  // computerChoice === 'Scissors' && playerChoice === 'Paper') {
-  //     roundInfo.textContent = `Computer\'s choice: ${computerChoice}. Your choice: ${playerChoice}; You lost!`;
-  //     winner = 'computer';
-  // } 
-  // else {
-  //     roundInfo.textContent = `Computer\'s choice: ${computerChoice}. Your choice: ${playerChoice}; You won!`;
-  //     winner = 'player';
-  // }
-
   switch (playerChoice) {
-    case 'Rock':
-      if (computerChoice === 'Rock') {
+    case 'rock':
+      if (computerChoice === 'rock') {
         winner = 0;
         break;
-      } else if (computerChoice === 'Paper') {
+      } else if (computerChoice === 'paper') {
         winner = 'computer'
         break;
-      } else if (computerChoice === 'Scissors') {
+      } else if (computerChoice === 'scissors') {
         winner = 'player';
         break;
       }
   
-    case 'Paper':
-      if (computerChoice === 'Paper') {
+    case 'paper':
+      if (computerChoice === 'paper') {
         winner = 0;
         break;
-      } else if (computerChoice === 'Scissors') {
+      } else if (computerChoice === 'scissors') {
         winner = 'computer'
         break;
-      } else if (computerChoice === 'Rock') {
+      } else if (computerChoice === 'rock') {
         winner = 'player';
         break;
       }
   
-    case 'Scissors':
-      if (computerChoice === 'Scissors') {
+    case 'scissors':
+      if (computerChoice === 'scissors') {
         winner = 0;
         break;
-      } else if (computerChoice === 'Rock') {
+      } else if (computerChoice === 'rock') {
         winner = 'computer'
         break;
-      } else if (computerChoice === 'Paper') {
+      } else if (computerChoice === 'paper') {
         winner = 'player';
         break;
       }
@@ -83,7 +68,7 @@ buttons.forEach((button) => {
   button.addEventListener("click", function() {
 
     let computerChoice = getComputerChoice();
-    let playerChoice = this.id.charAt(0).toUpperCase() + this.id.slice(1).toLowerCase();
+    let playerChoice = this.id;
     playRound(computerChoice, playerChoice);
 
     if (winner === 'player') {
@@ -109,7 +94,7 @@ buttons.forEach((button) => {
       computerWins = 0;
       counter.textContent = '';
     }
-  
+
   });
 });
 

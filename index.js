@@ -66,10 +66,10 @@ function displayResult(computerChoice, playerChoice, winner) {
     roundInfo.textContent = `You and the computer choose ${computerChoice}; Is\'s a tie!`;
     counter.textContent = `Player: ${playerWins} / Computer: ${computerWins}`;
   } else if (winner === 'player') {
-    roundInfo.textContent = `Computer\'s choice: ${computerChoice}. Your choice: ${playerChoice}; You won!`;
+    roundInfo.textContent = `Your choice: ${playerChoice}; Computer\'s choice: ${computerChoice}. You won!`;
     counter.textContent = `Player: ${playerWins} / Computer: ${computerWins}`;
   } else if (winner === 'computer') {
-    roundInfo.textContent = `Computer\'s choice: ${computerChoice}. Your choice: ${playerChoice}; You lost!`;
+    roundInfo.textContent = `Your choice: ${playerChoice}; Computer\'s choice: ${computerChoice}. You lost!`;
     counter.textContent = `Player: ${playerWins} / Computer: ${computerWins}`;
   }
 }
@@ -88,12 +88,14 @@ function Game() {
 
   // win
   if (playerWins === 5) {
+    roundInfo.textContent = 'Player Wins!';
+    counter.textContent = '';
     restartGame();
-    counter.textContent = 'Player Wins!';
   } 
   if (computerWins === 5) {
+    roundInfo.textContent = 'Computer Wins!';
+    counter.textContent = '';
     restartGame();
-    counter.textContent = 'Computer Wins!';
   }
 
   // display
@@ -107,7 +109,7 @@ function restartGame() {
   playerWins = 0;
   computerWins = 0;
   roundInfo.textContent = 'Choose rock, paper or scissors';
-//  counter.textContent = '';
+  counter.textContent = '';
 }
 
 // event listeners:

@@ -4,6 +4,10 @@ body{
     background-color: #252c35;
     display: flex;
     justify-content: center;
+    margin: 0;
+}
+
+.container{
     margin: 3%;
 }
 
@@ -48,11 +52,11 @@ body{
 }
 
 .background{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     z-index: -1;
-    width: 500px;
+    width: 55vh;
 }
 
 /* BUTTONS */

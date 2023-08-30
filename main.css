@@ -29,7 +29,6 @@ body{
 .text p{
     font-size: 30px;
     margin: 30px;
-    
 }
 
 #results{
@@ -37,7 +36,7 @@ body{
     color: white;
     border-radius: 10px;
     font-family: 'Concert One', cursive;
-    height: 100px; 
+        height: 100px; 
     width: 300px; 
     margin: 30px;
     padding: 20px;
@@ -45,6 +44,14 @@ body{
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
+}
+
+.background{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 500px;
 }
 
 /* BUTTONS */

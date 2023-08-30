@@ -16,41 +16,43 @@
     <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-    <div class="game">
-        <div class="text">
-            <h2>Rock Paper Scissors!</h2>
-            <p>Choose one of the options:</p>
-        </div>
-        <div class="buttons">
-            <img src="src/rock-btn.png" 
-                alt="Rock" 
-                class="choice btn" 
-                id="rock"
-                onmouseover="this.src = 'src/rock-btn2.png'"
-                onmouseout="this.src = 'src/rock-btn.png'">
-            <img src="src/paper-btn.png" 
-                alt="Paper" 
-                class="choice btn" 
-                id="paper"
-                onmouseover="this.src = 'src/paper-btn2.png'"
-                onmouseout="this.src = 'src/paper-btn.png'">
-            <img src="src/scissors-btn.png" 
-                alt="Scissors" 
-                class="choice btn" 
-                id="scissors"
-                onmouseover="this.src = 'src/scissors-btn2.png'"
-                onmouseout="this.src = 'src/scissors-btn.png'">
-            <!-- <button class="choice btn" id="rock">Rock</button>
-            <button class="choice btn" id="paper">Paper</button>
-            <button class="choice btn" id="scissors">Scissors</button> -->
-        </div>
-        <div id="results">
-            <div id="round-info">Choose rock, paper or scissors!</div>
-            <div id="counter"></div>
-        </div>
-        <div class="buttons">
-            <button class="btn" 
-                id="reset">Restart game</button>
+    <div class="container">
+        <div class="game">
+            <div class="text">
+                <h2>Rock Paper Scissors!</h2>
+                <p>Choose one of the options:</p>
+            </div>
+            <div class="buttons">
+                <img src="src/rock-btn.png"
+                    alt="Rock"
+                    class="choice btn"
+                    id="rock"
+                    onmouseover="this.src = 'src/rock-btn2.png'"
+                    onmouseout="this.src = 'src/rock-btn.png'">
+                <img src="src/paper-btn.png"
+                    alt="Paper"
+                    class="choice btn"
+                    id="paper"
+                    onmouseover="this.src = 'src/paper-btn2.png'"
+                    onmouseout="this.src = 'src/paper-btn.png'">
+                <img src="src/scissors-btn.png"
+                    alt="Scissors"
+                    class="choice btn"
+                    id="scissors"
+                    onmouseover="this.src = 'src/scissors-btn2.png'"
+                    onmouseout="this.src = 'src/scissors-btn.png'">
+                <!-- <button class="choice btn" id="rock">Rock</button>
+                <button class="choice btn" id="paper">Paper</button>
+                <button class="choice btn" id="scissors">Scissors</button> -->
+            </div>
+            <div id="results">
+                <div id="round-info">Choose rock, paper or scissors!</div>
+                <div id="counter"></div>
+            </div>
+            <div class="buttons">
+                <button class="btn"
+                    id="reset">Restart game</button>
+            </div>
         </div>
     </div>
     <div class="background">

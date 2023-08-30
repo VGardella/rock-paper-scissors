@@ -5,7 +5,7 @@ let winner = 0;
 let playerWins = 0;
 let computerWins = 0;
 
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".choice");
 const results = document.getElementById('results');
 
 const roundInfo = document.getElementById('round-info');
@@ -64,10 +64,13 @@ function playRound(computerChoice, playerChoice) {
 function displayResult(computerChoice, playerChoice, winner) {
   if (winner === 0) {
     roundInfo.textContent = `You and the computer choose ${computerChoice}; Is\'s a tie!`;
+    counter.textContent = `Player: ${playerWins} / Computer: ${computerWins}`;
   } else if (winner === 'player') {
     roundInfo.textContent = `Computer\'s choice: ${computerChoice}. Your choice: ${playerChoice}; You won!`;
+    counter.textContent = `Player: ${playerWins} / Computer: ${computerWins}`;
   } else if (winner === 'computer') {
     roundInfo.textContent = `Computer\'s choice: ${computerChoice}. Your choice: ${playerChoice}; You lost!`;
+    counter.textContent = `Player: ${playerWins} / Computer: ${computerWins}`;
   }
 }
 
@@ -83,15 +86,14 @@ function Game() {
     computerWins += 1;
   }
 
-  counter.textContent = `Player: ${playerWins} / Computer: ${computerWins}`;
-
   // win
   if (playerWins === 5) {
-    roundInfo.textContent = 'Player Wins!';
     restartGame();
-  } else if (computerWins === 5) {
-    roundInfo.textContent = 'Computer Wins!';
+    counter.textContent = 'Player Wins!';
+  } 
+  if (computerWins === 5) {
     restartGame();
+    counter.textContent = 'Computer Wins!';
   }
 
   // display
@@ -99,9 +101,13 @@ function Game() {
 }
 
 function restartGame() {
+  winner = null;
+  computerChoice = 0;
+  playerChoice = 0;
   playerWins = 0;
   computerWins = 0;
-  counter.textContent = '';
+  roundInfo.textContent = 'Choose rock, paper or scissors';
+//  counter.textContent = '';
 }
 
 // event listeners:

@@ -1,6 +1,49 @@
+/* BODY */
+
+body{
+    background-color: #252c35;
+    display: flex;
+    justify-content: center;
+    margin: 3%;
+}
+
+.game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text{
+    color: white;
+    font-family: 'Titan One', cursive;
+    text-align: center;
+}
+
+.text h2{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 70px;
+    margin-bottom: 30px;
+}
+
+.text p{
+    font-size: 30px;
+    margin: 30px;
+    
+}
+
 #results{
-    border: 2px solid black; 
+    background-color: #6f849c;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Concert One', cursive;
     height: 100px; 
     width: 300px; 
-    margin: 30px'
+    margin: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
 }
+

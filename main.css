@@ -86,3 +86,15 @@ body{
 .choice{
     width: 150px;
 }
+
+/* ANIMATION */
+
+.blink {
+    animation: blink 1s step-start 3;
+  }
+  
+  @keyframes blink {
+    25% {
+      opacity: 0;
+    }
+  }

@@ -75,6 +75,8 @@ function displayResult(computerChoice, playerChoice, winner) {
 }
 
 function Game() {
+  removeStyles();
+  
   // round
   let computerChoice = getComputerChoice();
   let playerChoice = this.id;
@@ -88,11 +90,13 @@ function Game() {
 
   // win
   if (playerWins === 5) {
+    addStyles();
     roundInfo.textContent = 'Player Wins!';
     counter.textContent = '';
     restartGame();
   } 
   if (computerWins === 5) {
+    addStyles();
     roundInfo.textContent = 'Computer Wins!';
     counter.textContent = '';
     restartGame();
@@ -108,8 +112,18 @@ function restartGame() {
   playerChoice = 0;
   playerWins = 0;
   computerWins = 0;
-  roundInfo.textContent = 'Choose rock, paper or scissors';
-  counter.textContent = '';
+}
+
+function addStyles() {
+  roundInfo.style.fontSize = '30px';
+  roundInfo.classList.add('blink');
+  counter.style.display = 'none';
+}
+
+function removeStyles() {
+  roundInfo.style.fontSize = '20px';
+  counter.style.display = 'block';
+  roundInfo.classList.remove('blink');
 }
 
 // event listeners:

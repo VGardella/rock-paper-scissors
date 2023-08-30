@@ -6,6 +6,7 @@ let playerWins = 0;
 let computerWins = 0;
 
 const buttons = document.querySelectorAll(".choice");
+const reset = document.getElementById('reset');
 const results = document.getElementById('results');
 
 const roundInfo = document.getElementById('round-info');
@@ -130,5 +131,12 @@ function removeStyles() {
  
 buttons.forEach((button) => {
   button.addEventListener("click", Game)
+})
+
+reset.addEventListener("click", () => {
+  removeStyles();
+  restartGame();
+  roundInfo.textContent = 'Choose rock, paper or scissors.';
+  counter.textContent = '';
 })
 
